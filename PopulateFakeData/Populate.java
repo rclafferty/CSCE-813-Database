@@ -1,6 +1,9 @@
 import java.util.*;
 import java.text.*;
+import java.time.*;
+import java.time.LocalDate;
 import java.io.*;
+import java.math.*;
 
 public class Populate
 {
@@ -12,6 +15,8 @@ public class Populate
     private static ArrayList<Float> doubleMajorsWeights;
     private static ArrayList<String> schoolYears;
     private static ArrayList<Float> schoolYearsWeights;
+
+    private static ArrayList<Meeting> meetings;
         
     private static Random r;
 
@@ -29,6 +34,8 @@ public class Populate
         doubleMajorsWeights = new ArrayList<Float>();
         schoolYears = new ArrayList<String>();
         schoolYearsWeights = new ArrayList<Float>();
+
+        meetings = new ArrayList<Meeting>();
 
         Scanner inFakeNames = new Scanner(new File("random_names.txt"));
         
@@ -97,24 +104,27 @@ public class Populate
             members.add(new Member(parts[0], parts[1], major, doubleMajor, year));
         }
 
-        populateMembers();
+        // populateMembers();
+        // populateMajors();
+        populateMeetings();
+        populateMeetingAttendance();
     }
 
     private static String getRandomMajor()
     {
         float weight = r.nextFloat();
-        System.out.println(weight);
-        System.out.println(majorsWeights.size());
+        // System.out.println(weight);
+        // System.out.println(majorsWeights.size());
         for(int i = majorsWeights.size() - 1; i >= 0; i--)
         {
-            System.out.println(weight + "\t" + majorsWeights.get(i));
+            // System.out.println(weight + "\t" + majorsWeights.get(i));
             if (weight <= majorsWeights.get(i))
             {
                 return majors.get(i);
             }
         }
 
-        System.out.println();
+        // System.out.println();
         return majors.get(0);
     }
 
@@ -146,9 +156,8 @@ public class Populate
         return schoolYears.get(0);
     }
 
-    private static void populateMembers()
+    private static void populateMembers() throws IOException
     {
-
         StringBuilder sb = new StringBuilder();
         sb.append("# Populate Members\n");
         sb.append("INSERT INTO Members(firstName, lastName, majorID, doubleMajorID, yearID, github, discord, googleDrive) VALUES");
@@ -169,7 +178,131 @@ public class Populate
             }
         }
 
-        System.out.println(sb.toString());
+        FileWriter fw = new FileWriter(new File("populate_members.sql"));
+        fw.write(sb.toString());
+        fw.close();
+    }
+
+    private static void populateMajors() throws IOException
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("# Populate Majors\n");
+        sb.append("INSERT INTO Majors(major) VALUES");
+
+        for (int i = 0; i < majors.size(); i++)
+        {
+            sb.append("\n\n\t");
+            sb.append("('" + majors.get(i) + "')");
+            if (i < majors.size() - 1)
+            {
+                sb.append(",");
+            }
+            else
+            {
+                sb.append(";");
+            }
+
+        }
+
+        FileWriter fw = new FileWriter(new File("populate_majors.sql"));
+        fw.write(sb.toString());
+        fw.close();
+    }
+
+    private static void populateMeetings() throws IOException
+    {
+        DecimalFormat df = new DecimalFormat("00");
+        LocalTime meetingTime = LocalTime.of(19, 0, 0);
+        
+        String dateString = "";
+        LocalDate thisDate;
+        String attendanceString = "";
+        int attendance = 0;
+        String topic = "";
+        
+        String[] parts;
+        String year = "";
+        String month = "";
+        String day = "";
+
+        Scanner inMeetings = new Scanner(new File("meetings.txt"));
+        while (inMeetings.hasNext())
+        {
+            dateString = inMeetings.nextLine();
+            // System.out.println("Date: " + dateString);
+
+            parts = dateString.split("-");
+            year = parts[0];
+            // System.out.println("Parts: " + parts.length);
+            for (String s : parts)
+            {
+                // System.out.println("** " + s);
+            }
+            // System.out.println("Month: " + month);
+            month = df.format(Integer.parseInt(parts[1]));
+            day = df.format(Integer.parseInt(parts[2]));
+            dateString = year + "-" + month + "-" + day;
+
+            thisDate = LocalDate.parse(dateString);
+            attendanceString = inMeetings.nextLine();
+            attendance = Integer.parseInt(attendanceString);
+            topic = inMeetings.nextLine();
+
+            meetings.add(new Meeting(thisDate, meetingTime, 1, topic, attendance));
+        }
+        inMeetings.close();
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("# Populate Meetings\n");
+        sb.append("INSERT INTO Meetings (typeID, meetingDate, topic) VALUES");
+
+        for (int i = 0; i < meetings.size(); i++)
+        {
+            sb.append("\n\n\t");
+            sb.append(meetings.get(meetings.size() - 1).createQueryPart());
+        }
+        
+        String finalString = sb.substring(0, sb.length() - 1) + ";";
+        
+        FileWriter fw = new FileWriter(new File("populate_meetings.sql"));
+        fw.write(finalString);
+        fw.close();
+    }
+
+    private static void populateMeetingAttendance() throws IOException
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("INSERT INTO MeetingAttendance (meetingID, memberID) VALUES");
+
+        float chance = 0.0f;
+        for (int i = 0; i < members.size(); i++)
+        {
+            System.out.println(meetings.size());
+            for (int m = 0; m < meetings.size(); m++)
+            {
+                if (meetings.get(m).numberInAttendance <= meetings.get(m).numberOfMembers())
+                    continue;
+
+                chance = r.nextFloat();
+                if (chance <= 0.1f * Math.log(i))
+                {
+                    continue;
+                }
+
+                meetings.get(m).addMember(members.get(i));
+
+                sb.append("\n\n\t");
+                sb.append("(" + (m + 1) + ", " + (i + 1) + "),");
+            }
+        }
+
+        
+        String finalString = sb.substring(0, sb.length() - 1) + ";";
+        System.out.println(finalString);
+        
+        FileWriter fw = new FileWriter(new File("populate_meeting_attendance.sql"));
+        fw.write(finalString);
+        fw.close();
     }
 }
 
@@ -208,5 +341,51 @@ class Member
     public String createQueryPart()
     {
         return "('" + firstName + "', '" + lastName + "', (SELECT id FROM Majors WHERE major LIKE '%" + major + "%'), (SELECT id FROM Majors WHERE major LIKE '%" + doubleMajor + "%'), (SELECT id FROM SchoolYears WHERE schoolYear LIKE '%" + schoolYear + "%'), '" + github + "', '" + discord + "', '" + googleDrive + "')";
+    }
+}
+
+class Meeting
+{
+    ArrayList<Member> membersInAttendance;
+    LocalDate dateOfMeeting;
+    LocalTime timeOfMeeting;
+
+    int meetingTypeID;
+
+    String topic;
+
+    int numberInAttendance;
+
+    public Meeting(LocalDate d, LocalTime t, int id, String to, int nia)
+    {
+        membersInAttendance = new ArrayList<Member>();
+        dateOfMeeting = d;
+        timeOfMeeting = t;
+
+        meetingTypeID = id;
+
+        topic = to;
+
+        numberInAttendance = nia;
+    }
+
+    public void addMember(Member m)
+    {
+        membersInAttendance.add(m);
+    }
+
+    public String createQueryPart()
+    {
+        return "(" + meetingTypeID + ", '" + dateOfMeeting.toString() + "', '" + topic + "')";
+    }
+
+    public int numberInAttendance()
+    {
+        return numberInAttendance;
+    }
+
+    public int numberOfMembers()
+    {
+        return membersInAttendance.size();
     }
 }
