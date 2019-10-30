@@ -1,3 +1,4 @@
+CREATE DATABASE IF NOT EXISTS Class;
 use Class;
 
 DROP TABLE IF EXISTS EventAttendance;

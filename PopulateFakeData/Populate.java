@@ -106,8 +106,9 @@ public class Populate
 
         // populateMembers();
         // populateMajors();
-        populateMeetings();
-        populateMeetingAttendance();
+        // populateMeetings();
+        // populateMeetingAttendance();
+        populateEmails();
     }
 
     private static String getRandomMajor()
@@ -248,6 +249,7 @@ public class Populate
             attendance = Integer.parseInt(attendanceString);
             topic = inMeetings.nextLine();
 
+            // TODO: fix for multiple meeting types
             meetings.add(new Meeting(thisDate, meetingTime, 1, topic, attendance));
         }
         inMeetings.close();
@@ -304,6 +306,27 @@ public class Populate
         fw.write(finalString);
         fw.close();
     }
+
+    private static void populateEmails() throws IOException
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.append("INSERT INTO Emails (memberID, email) VALUES");
+
+        float chance = 0.0f;
+        for (int i = 0; i < members.size(); i++)
+        {
+            sb.append("\n\n\t");
+            sb.append("(" + i + ", '" + members.get(i).getEmail() + "'),");
+        }
+
+        
+        String finalString = sb.substring(0, sb.length() - 1) + ";";
+        System.out.println(finalString);
+        
+        FileWriter fw = new FileWriter(new File("populate_emails.sql"));
+        fw.write(finalString);
+        fw.close();
+    }
 }
 
 class Member
@@ -317,6 +340,8 @@ class Member
     String major;
     String doubleMajor;
     String schoolYear;
+
+    String email;
 
     DecimalFormat df = new DecimalFormat("0000");
     Random r = new Random();
@@ -336,11 +361,18 @@ class Member
         github = firstName.toLowerCase().charAt(0) + lastName.toLowerCase();
         discord = github + "#" + df.format(r.nextInt(9999));
         googleDrive = github + "@gmail.com";
+
+        email = github + "@" + "randomemail.com";
     }
 
     public String createQueryPart()
     {
         return "('" + firstName + "', '" + lastName + "', (SELECT id FROM Majors WHERE major LIKE '%" + major + "%'), (SELECT id FROM Majors WHERE major LIKE '%" + doubleMajor + "%'), (SELECT id FROM SchoolYears WHERE schoolYear LIKE '%" + schoolYear + "%'), '" + github + "', '" + discord + "', '" + googleDrive + "')";
+    }
+
+    public String getEmail()
+    {
+        return email;
     }
 }
 
@@ -388,4 +420,9 @@ class Meeting
     {
         return membersInAttendance.size();
     }
+}
+
+class Event
+{
+    // TODO: Add code here to track events
 }
