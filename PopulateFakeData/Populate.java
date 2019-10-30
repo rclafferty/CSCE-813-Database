@@ -230,16 +230,9 @@ public class Populate
         while (inMeetings.hasNext())
         {
             dateString = inMeetings.nextLine();
-            // System.out.println("Date: " + dateString);
 
             parts = dateString.split("-");
             year = parts[0];
-            // System.out.println("Parts: " + parts.length);
-            for (String s : parts)
-            {
-                // System.out.println("** " + s);
-            }
-            // System.out.println("Month: " + month);
             month = df.format(Integer.parseInt(parts[1]));
             day = df.format(Integer.parseInt(parts[2]));
             dateString = year + "-" + month + "-" + day;
