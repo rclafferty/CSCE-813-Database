@@ -86,7 +86,6 @@ public class Populate
         {
             parts = s.split(" ");
 
-            // major = majors.get(r.nextInt(majors.size()));
             major = getRandomMajor();
             if (major.equals("Undeclared"))
             {
@@ -95,8 +94,6 @@ public class Populate
             }
             else
             {
-                // doubleMajor = doubleMajors.get(r.nextInt(doubleMajors.size()));
-                // year = schoolYears.get(r.nextInt(schoolYears.size()));
                 doubleMajor = getRandomDoubleMajor();
                 year = getRandomSchoolYear();
             }
@@ -114,11 +111,8 @@ public class Populate
     private static String getRandomMajor()
     {
         float weight = r.nextFloat();
-        // System.out.println(weight);
-        // System.out.println(majorsWeights.size());
         for(int i = majorsWeights.size() - 1; i >= 0; i--)
         {
-            // System.out.println(weight + "\t" + majorsWeights.get(i));
             if (weight <= majorsWeights.get(i))
             {
                 return majors.get(i);
