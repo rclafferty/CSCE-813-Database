@@ -349,7 +349,7 @@ class Member
         discord = github + "#" + df.format(r.nextInt(9999));
         googleDrive = github + "@gmail.com";
 
-        email = github + "@" + "randomemail.com";
+        email = getRandomMailAddress(github);
     }
 
     public String createQueryPart()
@@ -360,6 +360,44 @@ class Member
     public String getEmail()
     {
         return email;
+    }
+
+    private String getRandomMailAddress(String userName)
+    {
+        float withoutEmailRate = (float) 0.05;
+        float totalRate = (float) 1.00;
+
+        float weight = r.nextFloat();
+        if (weight <= withoutEmailRate){
+            return "";
+        }
+
+        int index = r.nextInt(8);
+
+
+        return userName + "@" + MailServer.values()[index].getServer();
+    }
+
+    enum MailServer{
+        Hotmail("hotmail.com"),
+        Outlook("outlook.com"),
+        Gmail("gmail.com"),
+        Yandex("yandex.com"),
+        Husker("huskers.unl.edu"),
+        UNL("unl.edu"),
+        Mail("mail.com"),
+        Yahoo("yahoo.com");
+
+
+        private String server;
+
+        MailServer(String serverName){
+            this.server = serverName;
+        }
+
+        public String getServer(){
+            return server;
+        }
     }
 }
 
