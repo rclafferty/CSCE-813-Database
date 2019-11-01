@@ -450,4 +450,45 @@ class Meeting
 class Event
 {
     // TODO: Add code here to track events
+	ArrayList<Member> membersInAttendance;
+    LocalDate startDateOfEvent;
+    LocalDate endDateOfEvent;
+    LocalTime timeOfEvent;
+    int locationID;
+    int eventTypeID;
+    String eventName;
+    int numberInAttendance;
+
+    public Event(LocalDate startD, LocalDate endD, LocalTime t, int typeID, String name, int loc, int nia)
+    {
+        membersInAttendance = new ArrayList<Member>();
+        startDateOfEvent = startD;
+        endDateOfEvent = endD;
+        timeOfEvent = t;
+        eventTypeID = typeID;
+        eventName = name;
+        locationID = loc;
+        numberInAttendance = nia;
+    }
+
+    public void addMember(Member m)
+    {
+        membersInAttendance.add(m);
+    }
+
+    public int numberInAttendance()
+    {
+        return numberInAttendance;
+    }
+
+    public int numberOfMembers()
+    {
+        return membersInAttendance.size();
+    }
+
+    public String createQueryPart()
+    {
+        return "('" + eventName + "', " + locationID + ", " + eventTypeID+", '" +startDateOfEvent.toString() + "', '" +endDateOfEvent+"')";
+    }
+	
 }
