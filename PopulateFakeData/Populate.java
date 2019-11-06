@@ -207,37 +207,36 @@ public class Populate
     private static void populateMeetings() throws IOException
     {
         DecimalFormat df = new DecimalFormat("00");
-        LocalTime meetingTime = LocalTime.of(19, 0, 0);
+        LocalTime meetingTime;
         
         String dateString = "";
         LocalDate thisDate;
         String attendanceString = "";
         int attendance = 0;
+        String meetingTypeString = "";
+        int meetingType;
         String topic = "";
         
         String[] parts;
-        String year = "";
-        String month = "";
-        String day = "";
+        String date;
+        String time;
 
         Scanner inMeetings = new Scanner(new File("meetings.txt"));
         while (inMeetings.hasNext())
         {
             dateString = inMeetings.nextLine();
-
-            parts = dateString.split("-");
-            year = parts[0];
-            month = df.format(Integer.parseInt(parts[1]));
-            day = df.format(Integer.parseInt(parts[2]));
-            dateString = year + "-" + month + "-" + day;
-
-            thisDate = LocalDate.parse(dateString);
+            parts = dateString.split(" ");
+            date = parts[0];
+            time = parts[1];
+            thisDate = LocalDate.parse(date);
+            meetingTime = LocalTime.parse(time);
             attendanceString = inMeetings.nextLine();
             attendance = Integer.parseInt(attendanceString);
+            meetingTypeString = inMeetings.nextLine();
+            meetingType = Integer.parseInt(meetingTypeString);
             topic = inMeetings.nextLine();
 
-            // TODO: fix for multiple meeting types
-            meetings.add(new Meeting(thisDate, meetingTime, 1, topic, attendance));
+            meetings.add(new Meeting(thisDate, meetingTime, meetingType, topic, attendance));
         }
         inMeetings.close();
 
