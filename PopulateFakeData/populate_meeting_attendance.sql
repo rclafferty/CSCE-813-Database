@@ -1,1 +1,0 @@
-INSERT INTO MeetingAttendance (meetingID, memberID) VALUE;

@@ -39,7 +39,7 @@ public class Populate
         meetings = new ArrayList<Meeting>();
         events = new ArrayList<Event>();
 
-        Scanner inFakeNames = new Scanner(new File("random_names.txt"));
+        Scanner inFakeNames = new Scanner(new File("TXT/random_names.txt"));
         
         while (inFakeNames.hasNext())
         {
@@ -48,7 +48,7 @@ public class Populate
 
         inFakeNames.close();
 
-        Scanner inMajors = new Scanner(new File("majors.txt"));
+        Scanner inMajors = new Scanner(new File("TXT/majors.txt"));
 
         float weight = 0.0f;
         while (inMajors.hasNext())
@@ -59,7 +59,7 @@ public class Populate
 
         inMajors.close();
 
-        Scanner inDoubleMajors = new Scanner(new File("double_majors.txt"));
+        Scanner inDoubleMajors = new Scanner(new File("TXT/double_majors.txt"));
 
         while (inDoubleMajors.hasNext())
         {
@@ -69,7 +69,7 @@ public class Populate
 
         inDoubleMajors.close();
 
-        Scanner inSchoolYears = new Scanner(new File("school_years.txt"));
+        Scanner inSchoolYears = new Scanner(new File("TXT/school_years.txt"));
 
         while (inSchoolYears.hasNext())
         {
@@ -103,11 +103,11 @@ public class Populate
             members.add(new Member(parts[0], parts[1], major, doubleMajor, year));
         }
 
-        // populateMembers();
-        // populateMajors();
+        populateMembers();
+        populateMajors();
         populateMeetings();
-        // populateMeetingAttendance();
-        // populateEmails();
+        populateMeetingAttendance();
+        populateEmails();
         populateEvents();
     }
 
@@ -176,7 +176,7 @@ public class Populate
             }
         }
 
-        FileWriter fw = new FileWriter(new File("populate_members.sql"));
+        FileWriter fw = new FileWriter(new File("SQL/populate_members.sql"));
         fw.write(sb.toString());
         fw.close();
     }
@@ -202,7 +202,7 @@ public class Populate
 
         }
 
-        FileWriter fw = new FileWriter(new File("populate_majors.sql"));
+        FileWriter fw = new FileWriter(new File("SQL/populate_majors.sql"));
         fw.write(sb.toString());
         fw.close();
     }
@@ -224,7 +224,7 @@ public class Populate
         String date;
         String time;
 
-        Scanner inMeetings = new Scanner(new File("meetings.txt"));
+        Scanner inMeetings = new Scanner(new File("TXT/meetings.txt"));
         while (inMeetings.hasNext())
         {
             dateString = inMeetings.nextLine();
@@ -254,7 +254,7 @@ public class Populate
         
         String finalString = sb.substring(0, sb.length() - 1) + ";";
         
-        FileWriter fw = new FileWriter(new File("populate_meetings.sql"));
+        FileWriter fw = new FileWriter(new File("SQL/populate_meetings.sql"));
         fw.write(finalString);
         fw.close();
     }
@@ -290,7 +290,7 @@ public class Populate
         String finalString = sb.substring(0, sb.length() - 1) + ";";
         System.out.println(finalString);
         
-        FileWriter fw = new FileWriter(new File("populate_meeting_attendance.sql"));
+        FileWriter fw = new FileWriter(new File("SQL/populate_meeting_attendance.sql"));
         fw.write(finalString);
         fw.close();
     }
@@ -328,7 +328,7 @@ public class Populate
 
         int locationID = 1;
 
-        Scanner inEvents = new Scanner(new File("events.txt"));
+        Scanner inEvents = new Scanner(new File("TXT/events.txt"));
         while (inEvents.hasNext())
         {
             //Line 1: Starting Date and Time
@@ -375,7 +375,7 @@ public class Populate
 
         String finalString = sb.substring(0, sb.length() - 1) + ";";
         
-        FileWriter fw = new FileWriter(new File("populate_events.sql"));
+        FileWriter fw = new FileWriter(new File("SQL/populate_events.sql"));
         fw.write(finalString);
         fw.close();
     }
@@ -396,7 +396,7 @@ public class Populate
         String finalString = sb.substring(0, sb.length() - 1) + ";";
         System.out.println(finalString);
         
-        FileWriter fw = new FileWriter(new File("populate_emails.sql"));
+        FileWriter fw = new FileWriter(new File("SQL/populate_emails.sql"));
         fw.write(finalString);
         fw.close();
     }
