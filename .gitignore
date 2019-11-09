@@ -1,5 +1,8 @@
 # Ignore class files
 *.class
 
+# Ignore cache files
+*/.vscode/
+
 # Ignore the backup folder
 /Backup/
