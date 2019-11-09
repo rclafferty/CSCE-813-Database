@@ -1,301 +1,301 @@
 INSERT INTO Emails (memberID, email) VALUES
 
-	(0, 'mallman@randomemail.com'),
+	(0, 'mallman@gmail.com'),
 
-	(1, 'aconway@randomemail.com'),
+	(1, 'aconway@outlook.com'),
 
-	(2, 'mfitzpatrick@randomemail.com'),
+	(2, ''),
 
-	(3, 'smcnamara@randomemail.com'),
+	(3, 'smcnamara@yandex.com'),
 
-	(4, 'unixon@randomemail.com'),
+	(4, 'unixon@unl.edu'),
 
-	(5, 'sfulton@randomemail.com'),
+	(5, 'sfulton@gmail.com'),
 
-	(6, 'hleblanc@randomemail.com'),
+	(6, 'hleblanc@yahoo.com'),
 
-	(7, 'jwynn@randomemail.com'),
+	(7, 'jwynn@outlook.com'),
 
-	(8, 'eguest@randomemail.com'),
+	(8, 'eguest@unl.edu'),
 
-	(9, 'erobins@randomemail.com'),
+	(9, 'erobins@huskers.unl.edu'),
 
-	(10, 'kmonaghan@randomemail.com'),
+	(10, 'kmonaghan@mail.com'),
 
-	(11, 'jhayward@randomemail.com'),
+	(11, 'jhayward@mail.com'),
 
-	(12, 'scalvert@randomemail.com'),
+	(12, 'scalvert@mail.com'),
 
-	(13, 'rbloom@randomemail.com'),
+	(13, 'rbloom@yahoo.com'),
 
-	(14, 'damos@randomemail.com'),
+	(14, 'damos@unl.edu'),
 
-	(15, 'jthompson@randomemail.com'),
+	(15, 'jthompson@gmail.com'),
 
-	(16, 'modoherty@randomemail.com'),
+	(16, 'modoherty@outlook.com'),
 
-	(17, 'tfowler@randomemail.com'),
+	(17, 'tfowler@gmail.com'),
 
-	(18, 'awebber@randomemail.com'),
+	(18, 'awebber@mail.com'),
 
-	(19, 'msummers@randomemail.com'),
+	(19, 'msummers@mail.com'),
 
-	(20, 'trodgers@randomemail.com'),
+	(20, 'trodgers@huskers.unl.edu'),
 
-	(21, 'slynch@randomemail.com'),
+	(21, 'slynch@gmail.com'),
 
-	(22, 'arodrigues@randomemail.com'),
+	(22, 'arodrigues@yandex.com'),
 
-	(23, 'tedge@randomemail.com'),
+	(23, 'tedge@huskers.unl.edu'),
 
-	(24, 'wmilner@randomemail.com'),
+	(24, 'wmilner@unl.edu'),
 
-	(25, 'tneale@randomemail.com'),
+	(25, 'tneale@gmail.com'),
 
-	(26, 'bbarr@randomemail.com'),
+	(26, 'bbarr@outlook.com'),
 
-	(27, 'adavies@randomemail.com'),
+	(27, 'adavies@unl.edu'),
 
-	(28, 'lmccartney@randomemail.com'),
+	(28, 'lmccartney@yandex.com'),
 
-	(29, 'ktanner@randomemail.com'),
+	(29, 'ktanner@outlook.com'),
 
-	(30, 'aweber@randomemail.com'),
+	(30, 'aweber@mail.com'),
 
-	(31, 'owade@randomemail.com'),
+	(31, 'owade@hotmail.com'),
 
-	(32, 'zramsey@randomemail.com'),
+	(32, 'zramsey@mail.com'),
 
-	(33, 'rbriggs@randomemail.com'),
+	(33, 'rbriggs@mail.com'),
 
-	(34, 'mnolan@randomemail.com'),
+	(34, 'mnolan@huskers.unl.edu'),
 
-	(35, 'jfrederick@randomemail.com'),
+	(35, ''),
 
-	(36, 'belliott@randomemail.com'),
+	(36, 'belliott@yandex.com'),
 
-	(37, 'mbeech@randomemail.com'),
+	(37, 'mbeech@mail.com'),
 
-	(38, 'sbull@randomemail.com'),
+	(38, 'sbull@outlook.com'),
 
-	(39, 'rferrell@randomemail.com'),
+	(39, 'rferrell@yahoo.com'),
 
-	(40, 'esosa@randomemail.com'),
+	(40, 'esosa@yandex.com'),
 
-	(41, 'ilandry@randomemail.com'),
+	(41, 'ilandry@yahoo.com'),
 
-	(42, 'smosley@randomemail.com'),
+	(42, 'smosley@outlook.com'),
 
-	(43, 'lventura@randomemail.com'),
+	(43, 'lventura@outlook.com'),
 
-	(44, 'lwormald@randomemail.com'),
+	(44, 'lwormald@outlook.com'),
 
-	(45, 'roreilly@randomemail.com'),
+	(45, 'roreilly@huskers.unl.edu'),
 
-	(46, 'dhudson@randomemail.com'),
+	(46, 'dhudson@hotmail.com'),
 
-	(47, 'sfreeman@randomemail.com'),
+	(47, 'sfreeman@outlook.com'),
 
-	(48, 'cboyce@randomemail.com'),
+	(48, 'cboyce@yandex.com'),
 
-	(49, 'rvilla@randomemail.com'),
+	(49, 'rvilla@hotmail.com'),
 
-	(50, 'cproctor@randomemail.com'),
+	(50, 'cproctor@gmail.com'),
 
-	(51, 'icolon@randomemail.com'),
+	(51, 'icolon@huskers.unl.edu'),
 
-	(52, 'elyon@randomemail.com'),
+	(52, 'elyon@unl.edu'),
 
-	(53, 'mzuniga@randomemail.com'),
+	(53, 'mzuniga@huskers.unl.edu'),
 
-	(54, 'gwhittle@randomemail.com'),
+	(54, 'gwhittle@yandex.com'),
 
-	(55, 'mcisneros@randomemail.com'),
+	(55, ''),
 
-	(56, 'edodson@randomemail.com'),
+	(56, 'edodson@yandex.com'),
 
-	(57, 'abest@randomemail.com'),
+	(57, 'abest@gmail.com'),
 
-	(58, 'croche@randomemail.com'),
+	(58, 'croche@unl.edu'),
 
-	(59, 'bmartin@randomemail.com'),
+	(59, ''),
 
-	(60, 'hhuff@randomemail.com'),
+	(60, 'hhuff@outlook.com'),
 
-	(61, 'kstamp@randomemail.com'),
+	(61, 'kstamp@huskers.unl.edu'),
 
-	(62, 'kwang@randomemail.com'),
+	(62, ''),
 
-	(63, 'lridley@randomemail.com'),
+	(63, 'lridley@yahoo.com'),
 
-	(64, 'jhughes@randomemail.com'),
+	(64, 'jhughes@hotmail.com'),
 
-	(65, 'mhayward@randomemail.com'),
+	(65, 'mhayward@yahoo.com'),
 
-	(66, 'cbrady@randomemail.com'),
+	(66, 'cbrady@gmail.com'),
 
-	(67, 'ksims@randomemail.com'),
+	(67, 'ksims@huskers.unl.edu'),
 
-	(68, 'epitts@randomemail.com'),
+	(68, 'epitts@huskers.unl.edu'),
 
-	(69, 'rwebster@randomemail.com'),
+	(69, 'rwebster@hotmail.com'),
 
-	(70, 'cvillarreal@randomemail.com'),
+	(70, 'cvillarreal@huskers.unl.edu'),
 
-	(71, 'ssmart@randomemail.com'),
+	(71, 'ssmart@yahoo.com'),
 
-	(72, 'nfuller@randomemail.com'),
+	(72, 'nfuller@outlook.com'),
 
-	(73, 'mbritt@randomemail.com'),
+	(73, 'mbritt@unl.edu'),
 
-	(74, 'isummers@randomemail.com'),
+	(74, 'isummers@huskers.unl.edu'),
 
-	(75, 'vhagan@randomemail.com'),
+	(75, 'vhagan@unl.edu'),
 
-	(76, 'gblackburn@randomemail.com'),
+	(76, 'gblackburn@gmail.com'),
 
-	(77, 'bcowan@randomemail.com'),
+	(77, 'bcowan@mail.com'),
 
-	(78, 'zgrant@randomemail.com'),
+	(78, 'zgrant@hotmail.com'),
 
-	(79, 'smcgee@randomemail.com'),
+	(79, 'smcgee@yandex.com'),
 
-	(80, 'cnicholson@randomemail.com'),
+	(80, 'cnicholson@yahoo.com'),
 
-	(81, 'lboyce@randomemail.com'),
+	(81, 'lboyce@hotmail.com'),
 
-	(82, 'grankin@randomemail.com'),
+	(82, 'grankin@yahoo.com'),
 
-	(83, 'nibarra@randomemail.com'),
+	(83, 'nibarra@gmail.com'),
 
-	(84, 'evasquez@randomemail.com'),
+	(84, 'evasquez@mail.com'),
 
-	(85, 'kdixon@randomemail.com'),
+	(85, 'kdixon@gmail.com'),
 
-	(86, 'bwinters@randomemail.com'),
+	(86, 'bwinters@hotmail.com'),
 
-	(87, 'mburks@randomemail.com'),
+	(87, 'mburks@hotmail.com'),
 
-	(88, 'ggalvan@randomemail.com'),
+	(88, ''),
 
-	(89, 'lcallahan@randomemail.com'),
+	(89, 'lcallahan@yahoo.com'),
 
-	(90, 'jcoles@randomemail.com'),
+	(90, 'jcoles@outlook.com'),
 
-	(91, 'zmays@randomemail.com'),
+	(91, 'zmays@huskers.unl.edu'),
 
-	(92, 'csantana@randomemail.com'),
+	(92, 'csantana@gmail.com'),
 
-	(93, 'hholcomb@randomemail.com'),
+	(93, 'hholcomb@unl.edu'),
 
-	(94, 'idunkley@randomemail.com'),
+	(94, 'idunkley@yahoo.com'),
 
-	(95, 'aarias@randomemail.com'),
+	(95, 'aarias@gmail.com'),
 
-	(96, 'sfenton@randomemail.com'),
+	(96, 'sfenton@unl.edu'),
 
-	(97, 'fkoch@randomemail.com'),
+	(97, 'fkoch@gmail.com'),
 
-	(98, 'bgentry@randomemail.com'),
+	(98, 'bgentry@huskers.unl.edu'),
 
-	(99, 'khowells@randomemail.com'),
+	(99, 'khowells@gmail.com'),
 
-	(100, 'mhollis@randomemail.com'),
+	(100, 'mhollis@unl.edu'),
 
-	(101, 'kgreenwood@randomemail.com'),
+	(101, ''),
 
-	(102, 'eschmidt@randomemail.com'),
+	(102, 'eschmidt@mail.com'),
 
-	(103, 'mkemp@randomemail.com'),
+	(103, 'mkemp@unl.edu'),
 
-	(104, 'nbarnard@randomemail.com'),
+	(104, 'nbarnard@unl.edu'),
 
-	(105, 'rmccann@randomemail.com'),
+	(105, 'rmccann@yandex.com'),
 
-	(106, 'dengland@randomemail.com'),
+	(106, 'dengland@outlook.com'),
 
-	(107, 'csosa@randomemail.com'),
+	(107, 'csosa@hotmail.com'),
 
-	(108, 'gpotts@randomemail.com'),
+	(108, 'gpotts@yandex.com'),
 
-	(109, 'jcortez@randomemail.com'),
+	(109, 'jcortez@unl.edu'),
 
-	(110, 'dmedrano@randomemail.com'),
+	(110, 'dmedrano@hotmail.com'),
 
-	(111, 'akaur@randomemail.com'),
+	(111, 'akaur@yahoo.com'),
 
-	(112, 'shardy@randomemail.com'),
+	(112, 'shardy@huskers.unl.edu'),
 
-	(113, 'cdominguez@randomemail.com'),
+	(113, 'cdominguez@gmail.com'),
 
-	(114, 'rneale@randomemail.com'),
+	(114, 'rneale@huskers.unl.edu'),
 
-	(115, 'terickson@randomemail.com'),
+	(115, 'terickson@mail.com'),
 
-	(116, 'rhowe@randomemail.com'),
+	(116, 'rhowe@outlook.com'),
 
-	(117, 'ukane@randomemail.com'),
+	(117, 'ukane@hotmail.com'),
 
-	(118, 'cmiddleton@randomemail.com'),
+	(118, 'cmiddleton@mail.com'),
 
-	(119, 'rharding@randomemail.com'),
+	(119, 'rharding@huskers.unl.edu'),
 
-	(120, 'jrodgers@randomemail.com'),
+	(120, 'jrodgers@yandex.com'),
 
-	(121, 'mmaddox@randomemail.com'),
+	(121, 'mmaddox@yahoo.com'),
 
-	(122, 'jbroughton@randomemail.com'),
+	(122, ''),
 
-	(123, 'ewheeler@randomemail.com'),
+	(123, 'ewheeler@yandex.com'),
 
-	(124, 'amelendez@randomemail.com'),
+	(124, 'amelendez@unl.edu'),
 
-	(125, 'ftang@randomemail.com'),
+	(125, 'ftang@outlook.com'),
 
-	(126, 'jkinney@randomemail.com'),
+	(126, 'jkinney@huskers.unl.edu'),
 
-	(127, 'pfloyd@randomemail.com'),
+	(127, 'pfloyd@yahoo.com'),
 
-	(128, 'tparrish@randomemail.com'),
+	(128, 'tparrish@yahoo.com'),
 
-	(129, 'fsanderson@randomemail.com'),
+	(129, 'fsanderson@outlook.com'),
 
-	(130, 'fjohnson@randomemail.com'),
+	(130, 'fjohnson@huskers.unl.edu'),
 
-	(131, 'emahoney@randomemail.com'),
+	(131, 'emahoney@huskers.unl.edu'),
 
-	(132, 'mgay@randomemail.com'),
+	(132, 'mgay@gmail.com'),
 
-	(133, 'zjames@randomemail.com'),
+	(133, 'zjames@outlook.com'),
 
-	(134, 'bcopeland@randomemail.com'),
+	(134, 'bcopeland@gmail.com'),
 
-	(135, 'ospencer@randomemail.com'),
+	(135, 'ospencer@huskers.unl.edu'),
 
-	(136, 'cware@randomemail.com'),
+	(136, 'cware@yandex.com'),
 
-	(137, 'jgibbons@randomemail.com'),
+	(137, 'jgibbons@outlook.com'),
 
-	(138, 'jbenjamin@randomemail.com'),
+	(138, ''),
 
-	(139, 'ctran@randomemail.com'),
+	(139, 'ctran@huskers.unl.edu'),
 
-	(140, 'jgregory@randomemail.com'),
+	(140, 'jgregory@yahoo.com'),
 
-	(141, 'afritz@randomemail.com'),
+	(141, 'afritz@huskers.unl.edu'),
 
-	(142, 'jblair@randomemail.com'),
+	(142, 'jblair@outlook.com'),
 
-	(143, 'mcorbett@randomemail.com'),
+	(143, 'mcorbett@huskers.unl.edu'),
 
-	(144, 'acarr@randomemail.com'),
+	(144, 'acarr@yandex.com'),
 
-	(145, 'rmajor@randomemail.com'),
+	(145, 'rmajor@mail.com'),
 
-	(146, 'ibanks@randomemail.com'),
+	(146, 'ibanks@yandex.com'),
 
-	(147, 'abain@randomemail.com'),
+	(147, 'abain@huskers.unl.edu'),
 
-	(148, 'tmeyer@randomemail.com'),
+	(148, 'tmeyer@hotmail.com'),
 
-	(149, 'fbuckner@randomemail.com');
+	(149, 'fbuckner@outlook.com');

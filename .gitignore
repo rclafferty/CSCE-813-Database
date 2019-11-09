@@ -1,2 +1,4 @@
 # Ignore class files
 *.class
+.vscode/
+PopulateFakeData/.vscode/
