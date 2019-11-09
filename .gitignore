@@ -1,2 +1,5 @@
 # Ignore class files
 *.class
+
+# Ignore the backup folder
+/Backup/
