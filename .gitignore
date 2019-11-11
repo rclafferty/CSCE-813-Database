@@ -6,3 +6,6 @@
 
 # Ignore the backup folder
 /Backup/
+
+# Ignore real data
+/RealData/

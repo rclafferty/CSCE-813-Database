@@ -1,17 +1,18 @@
-CREATE DATABASE IF NOT EXISTS Class;
-use Class;
+-- CREATE DATABASE IF NOT EXISTS Class;
+-- use Class;
 
-DROP TABLE IF EXISTS EventAttendance;
-DROP TABLE IF EXISTS Events;
-DROP TABLE IF EXISTS EventTypes;
-DROP TABLE IF EXISTS Locations;
-DROP TABLE IF EXISTS MeetingAttendance;
-DROP TABLE IF EXISTS Meetings;
-DROP TABLE IF EXISTS MeetingTypes;
-DROP TABLE IF EXISTS Emails;
-DROP TABLE IF EXISTS Members;
-DROP TABLE IF EXISTS Majors;
-DROP TABLE IF EXISTS SchoolYears;
+DROP TABLE IF EXISTS
+    EventAttendance,
+    Events,
+    EventTypes,
+    Locations,
+    MeetingAttendance,
+    Meetings,
+    MeetingTypes,
+    Emails,
+    Members,
+    Majors,
+    SchoolYears;
 
 CREATE TABLE IF NOT EXISTS Majors (
     id int PRIMARY KEY AUTO_INCREMENT,
@@ -26,7 +27,7 @@ CREATE TABLE IF NOT EXISTS Majors (
 
 CREATE TABLE IF NOT EXISTS SchoolYears (
     id int PRIMARY KEY AUTO_INCREMENT,
-    schoolYear varchar(10),
+    schoolYear varchar(10) NOT NULL,
 
     # Uniques
     UNIQUE(schoolYear),
@@ -43,18 +44,18 @@ CREATE TABLE IF NOT EXISTS Members (
     lastName varchar(15) NOT NULL,
     
     # School info
-    majorID int,
+    majorID int DEFAULT 1,
         FOREIGN KEY(majorID) references Majors(id),
-    doubleMajorID int,
+    doubleMajorID int DEFAULT 1,
         FOREIGN KEY (doubleMajorID) references Majors(id),
-    yearID int,
+    yearID int DEFAULT 1,
         FOREIGN KEY(yearID) references SchoolYears(id),
 
     # Contact info
-    phoneNumber varchar(12),
+    -- phoneNumber varchar(12),
     
     github varchar(20) NOT NULL,
-    discord varchar(20),
+    discord varchar(20) NOT NULL,
     googleDrive varchar(40) NOT NULL,
 
     # Indexes
@@ -71,7 +72,7 @@ CREATE TABLE IF NOT EXISTS Members (
 CREATE TABLE IF NOT EXISTS Emails (
     memberID int,
         FOREIGN KEY(memberID) references Members(id),
-    email varchar(30),
+    email varchar(30) NOT NULL,
 
     # Indexes
     INDEX(email),
@@ -82,7 +83,7 @@ CREATE TABLE IF NOT EXISTS Emails (
 
 CREATE TABLE IF NOT EXISTS MeetingTypes (
     id int PRIMARY KEY AUTO_INCREMENT,
-    meetingType varchar(20),
+    meetingType varchar(20) NOT NULL,
 
     # Uniques
     UNIQUE(meetingType)
@@ -90,7 +91,7 @@ CREATE TABLE IF NOT EXISTS MeetingTypes (
 
 CREATE TABLE IF NOT EXISTS Meetings (
     id int PRIMARY KEY AUTO_INCREMENT,
-    typeID int,
+    typeID int DEFAULT 1,
         FOREIGN KEY(typeID) references MeetingTypes(id),
     meetingDate datetime NOT NULL,
     topic varchar(200),
@@ -117,9 +118,9 @@ CREATE TABLE IF NOT EXISTS Locations (
     name varchar(20) NOT NULL,
     building varchar(30),
     room int,
-    city varchar(20) NOT NULL,
-    state varchar(2) NOT NULL,
-    zip varchar(5) NOT NULL,
+    city varchar(20) NOT NULL DEFAULT 'Lincoln',
+    state varchar(2) NOT NULL DEFAULT 'NE',
+    zip varchar(5) NOT NULL DEFAULT '68588',
 
     # Indexes
     INDEX(name, building, room, city, state, zip),
@@ -136,7 +137,7 @@ CREATE TABLE IF NOT EXISTS EventTypes (
 
 CREATE TABLE IF NOT EXISTS Events (
     id int PRIMARY KEY AUTO_INCREMENT,
-    name varchar(30),
+    name varchar(30) NOT NULL,
     locationID int,
         FOREIGN KEY(locationID) references Locations(id),
     eventTypeID int,
