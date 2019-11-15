@@ -519,7 +519,7 @@ class Meeting
 
     public String createQueryPart()
     {
-        return "(" + meetingTypeID + ", '" + dateOfMeeting.toString() + "', '" + topic + "'),";
+        return "(" + meetingTypeID + ", '" + dateOfMeeting.toString() + " " + timeOfMeeting.toString() + "', '" + topic + "'),";
     }
 
     public int numberInAttendance()

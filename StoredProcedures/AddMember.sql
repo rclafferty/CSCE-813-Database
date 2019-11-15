@@ -10,7 +10,8 @@ CREATE PROCEDURE AddMember (
     schoolYear varchar(20),
     github varchar(20),
     discord varchar(20),
-    googleDrive varchar(40)
+    googleDrive varchar(40),
+    primaryEmail varchar(40)
 )
 BEGIN
     -- DECLARE product int DEFAULT 0;
@@ -26,6 +27,8 @@ BEGIN
 
     DECLARE memberGitHub varchar(20);
     DECLARE memberDiscord varchar(20);
+    
+    DECLARE memberIDNumber int;
     
     DECLARE CONTINUE HANDLER FOR NOT FOUND BEGIN END;
 
@@ -105,8 +108,28 @@ BEGIN
     END IF;
 
     INSERT INTO Members (firstName, lastName, majorID, doubleMajorID, yearID, github, discord, googleDrive) VALUES (firstName, lastName, memberMajorID, memberDMajorID, memberYearID, memberGitHub, memberDiscord, googleDrive);
-	# return (True);
+	
+    SELECT id
+    INTO memberIDNumber
+    FROM Members m
+    WHERE m.firstName LIKE firstName AND m.lastName LIKE lastName;
+    
+    IF primaryEmail IS NOT NULL THEN
+		INSERT INTO Emails(memberID, email) VALUE (memberIDNumber, primaryEmail);
+	ELSE
+		IF googleDrive IS NOT NULL THEN
+			INSERT INTO Emails(memberID, email) VALUE (memberIDNumber, googleDrive);
+		END IF;
+	END IF;
 
+END$$
+
+CREATE PROCEDURE AddArchivedMember(
+    firstName varchar(15),
+    lastName varchar(15)
+)
+BEGIN
+	CALL AddMember(firstName, lastName, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 END$$
 
 DELIMITER ;

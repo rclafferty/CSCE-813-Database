@@ -1,6 +1,8 @@
 -- CREATE DATABASE IF NOT EXISTS Class;
 -- use Class;
 
+USE GeneralTest;
+
 DROP TABLE IF EXISTS
     EventAttendance,
     Events,
@@ -16,7 +18,7 @@ DROP TABLE IF EXISTS
 
 CREATE TABLE IF NOT EXISTS Majors (
     id int PRIMARY KEY AUTO_INCREMENT,
-    major varchar(20) NOT NULL,
+    major varchar(30) NOT NULL,
 
     # Uniques
     UNIQUE(major),
@@ -95,6 +97,8 @@ CREATE TABLE IF NOT EXISTS Meetings (
         FOREIGN KEY(typeID) references MeetingTypes(id),
     meetingDate datetime NOT NULL,
     topic varchar(200),
+    locationID int,
+        FOREIGN KEY (locationID) REFERENCES Locations(id),
     
     # Uniques
     UNIQUE(meetingDate),
