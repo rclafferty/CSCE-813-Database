@@ -95,8 +95,7 @@ CREATE TABLE IF NOT EXISTS Locations (
     building varchar(30),
     room int,
     city varchar(20) NOT NULL DEFAULT 'Lincoln',
-    state varchar(2) NOT NULL DEFAULT 'NE',
-    zip varchar(5) NOT NULL DEFAULT '68588',
+    state varchar(2) NOT NULL DEFAULT 'NE'
 
     # Indexes
     INDEX(name, building, room, city, state, zip),
