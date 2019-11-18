@@ -1,0 +1,20 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Engineering",
+   "children": [
+    {"name": "Computer Science", "value": 1},
+	{"name": "Computer Engineering", "value": 1},
+	{"name": "Software Engineering", "value": 1}
+   ]
+  },
+  {
+      "name": "Business",
+      "children": [
+          {"name": "Marketing", "value": 1},
+          {"name": "Accounting", "value": 1}
+      ]
+  }
+ ]
+}

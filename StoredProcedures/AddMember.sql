@@ -14,10 +14,6 @@ CREATE PROCEDURE AddMember (
     primaryEmail varchar(40)
 )
 BEGIN
-    -- DECLARE product int DEFAULT 0;
-    -- SET product = num * num;
-    -- RETURN (product);
-
     DECLARE memberMajor varchar(30);
     DECLARE memberMajorID int;
     DECLARE memberDMajor varchar(30);

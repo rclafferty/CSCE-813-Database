@@ -53,9 +53,7 @@ CREATE TABLE IF NOT EXISTS Members (
     yearID int DEFAULT 1,
         FOREIGN KEY(yearID) references SchoolYears(id),
 
-    # Contact info
-    -- phoneNumber varchar(12),
-    
+    # Club Resources Info
     github varchar(20) NOT NULL,
     discord varchar(20) NOT NULL,
     googleDrive varchar(40) NOT NULL,
