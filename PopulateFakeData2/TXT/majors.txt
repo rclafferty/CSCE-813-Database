@@ -1,0 +1,16 @@
+1
+Computer Science
+0.6
+Software Engineering
+0.3
+Computer Engineering
+0.2
+Undeclared
+0.06
+Chemical Engineering
+0.04
+Marketing
+0.015
+Biomedical Systems Engineering
+0.01
+English

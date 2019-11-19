@@ -104,11 +104,13 @@ public class Populate
         }
 
         populateMembers();
-        populateMajors();
         populateMeetings();
         populateMeetingAttendance();
-        populateEmails();
         populateEvents();
+        
+        // Not needed anymore
+        // populateMajors();
+        // populateEmails();
     }
 
     private static String getRandomMajor()
@@ -440,7 +442,11 @@ class Member
 
     public String createQueryPart()
     {
-        return "('" + firstName + "', '" + lastName + "', (SELECT id FROM Majors WHERE major LIKE '%" + major + "%'), (SELECT id FROM Majors WHERE major LIKE '%" + doubleMajor + "%'), (SELECT id FROM SchoolYears WHERE schoolYear LIKE '%" + schoolYear + "%'), '" + github + "', '" + discord + "', '" + googleDrive + "')";
+        String query = "CALL AddMember ('" + firstName + "', '" + lastName + "', '" + major + "', '" + doubleMajor + "', '" + schoolYear + "', '" + github + "', '" + discord + "', '" + googleDrive + "', '" + email + "');";
+
+        return query;
+
+        // return "('" + firstName + "', '" + lastName + "', (SELECT id FROM Majors WHERE major LIKE '%" + major + "%'), (SELECT id FROM Majors WHERE major LIKE '%" + doubleMajor + "%'), (SELECT id FROM SchoolYears WHERE schoolYear LIKE '%" + schoolYear + "%'), '" + github + "', '" + discord + "', '" + googleDrive + "')";
     }
 
     public String getEmail()
