@@ -1,4 +1,7 @@
 import java.util.*;
+
+import javax.print.DocFlavor.STRING;
+
 import java.text.*;
 import java.time.*;
 import java.io.*;
@@ -32,6 +35,7 @@ public class Populate2
         doubleMajors = new ArrayList<Major>();
         schoolYears = new ArrayList<SchoolYear>();
         meetings = new ArrayList<Meeting>();
+        events = new ArrayList<Event>();
 
         // Read in fake names
         Scanner inFakeNames = new Scanner(new File("TXT/random_names.txt"));
@@ -84,15 +88,7 @@ public class Populate2
         while (inMeetings.hasNext())
         {
             String line = inMeetings.nextLine();
-            System.out.println(line);
-            // line = line.substring(2);
             String[] parts = line.split(" ");
-            // for (String s : parts)
-            for (int i = 0; i < parts.length; i++)
-            {
-                String s = parts[i];
-                System.out.println(s.trim());
-            }
             LocalDate meetingDate = LocalDate.parse(parts[0].trim());
             LocalTime meetingTime = LocalTime.parse(parts[1].trim());
             String topic = inMeetings.nextLine();
@@ -115,6 +111,43 @@ public class Populate2
             }
 
             meetings.add(currentMeeting);
+        }
+
+        Scanner inEvents = new Scanner(new File("TXT/events.txt"));
+        while (inEvents.hasNext())
+        {
+            String line = inEvents.nextLine();
+            String[] parts = line.split(" ");
+            LocalDate startDate = LocalDate.parse(parts[0].trim());
+            LocalTime startTime = LocalTime.parse(parts[1].trim());
+
+            line = inEvents.nextLine();
+            parts = line.split(" ");
+            LocalDate endDate = LocalDate.parse(parts[0].trim());
+            LocalTime endTime = LocalTime.parse(parts[1].trim());
+
+            int attendance = Integer.parseInt(inEvents.nextLine());
+            String eventType = inEvents.nextLine();
+            String eventName = inEvents.nextLine();
+
+
+            String location = inEvents.nextLine();
+
+            Event currentEvent = new Event(startDate, endDate, startTime, endTime, eventType, eventName, location);
+
+            for (int a = 0, m = 0; a < attendance && m < members.size(); m++)
+            {
+                float chance = randomNumberGenerator.nextFloat();
+                if (chance <= (0.1f * Math.log(m)) / 10)
+                {
+                    continue;
+                }
+                
+                currentEvent.addMember(members.get(m));
+                a = currentEvent.numberInAttendance();
+            }
+
+            events.add(currentEvent);
         }
 
         populate();
@@ -226,6 +259,36 @@ public class Populate2
         outMeetingAttendance.write("# Populate Meeting Attendance\n");
         outMeetingAttendance.write(sb.toString());
         outMeetingAttendance.close();
+
+        // New stringbuilder
+        sb = new StringBuilder();
+
+        System.out.println("Populating events...");
+        for (Event e : events)
+        {
+            sb.append(e.createQuery());
+            sb.append("\n");
+        }
+
+        FileWriter outEvents = new FileWriter(new File("SQL/populate_events2.sql"));
+        outEvents.write("# Populate Events\n");
+        outEvents.write(sb.toString());
+        outEvents.close();
+
+        // New stringbuilder
+        sb = new StringBuilder();
+
+        System.out.println("Populating event attendance...");
+        for (Event e : events)
+        {
+            sb.append(e.eventAttendanceQuery());
+            sb.append("\n");
+        }
+
+        FileWriter outEventAttendance = new FileWriter(new File("SQL/populate_event_attendance2.sql"));
+        outEventAttendance.write("# Populate Event Attendance\n");
+        outEventAttendance.write(sb.toString());
+        outEventAttendance.close();
     }
 }
 
@@ -403,8 +466,7 @@ class Meeting
             sb.append(m.lastName);
             sb.append("', '");
             sb.append(dateTimeString());
-            sb.append("');");
-            sb.append("\n");
+            sb.append("');\n");
         }
 
         return sb.toString();
@@ -413,5 +475,70 @@ class Meeting
 
 class Event
 {
-    String name;
+    String eventName;
+    ArrayList<Member> membersInAttendance;
+    LocalDate startDate;
+    LocalDate endDate;
+    LocalTime startTime;
+    LocalTime endTime;
+
+    String locationName;
+    String eventType;
+
+    public Event(LocalDate startD, LocalDate endD, LocalTime t1, LocalTime t2, String type, String name, String location)
+    {
+        membersInAttendance = new ArrayList<Member>();
+        startDate = startD;
+        endDate = endD;
+        startTime = t1;
+        endTime = t2;
+        eventType = type;
+        eventName = name;
+        locationName = location;
+    }
+
+    public void addMember(Member m)
+    {
+        membersInAttendance.add(m);
+    }
+
+    public int numberInAttendance()
+    {
+        return membersInAttendance.size();
+    }
+
+    public String createQuery()
+    {
+        return "CALL AddEvent('" + eventName + "', '" + locationName + "', '" + eventType + "', '" + startDateTimeString() + "', '" + endDateTimeString() +"');";
+    }
+
+    String startDateTimeString()
+    {
+        return startDate.toString() + " " + startTime.toString();
+    }
+
+    String endDateTimeString()
+    {
+        return endDate.toString() + " " + endTime.toString();
+    }
+
+    public String eventAttendanceQuery()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        for (Member m : membersInAttendance)
+        {
+            sb.append("CALL EventAttendance ('");
+            sb.append(m.firstName);
+            sb.append("', '");
+            sb.append(m.lastName);
+            sb.append("', '");
+            sb.append(eventName);
+            sb.append("', '");
+            sb.append(startDateTimeString());
+            sb.append("');\n");
+        }
+
+        return sb.toString();
+    }
 }
