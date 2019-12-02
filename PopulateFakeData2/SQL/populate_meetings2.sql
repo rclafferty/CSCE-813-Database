@@ -1,3 +1,16 @@
+# Populate locations
+CALL AddLocation ('Avery 19', 'Avery Hall', 19, NULL, NULL);
+CALL AddLocation ('Avery Basement', 'Avery Hall', NULL, NULL, NULL);
+CALL AddLocationNameOnly ('Lincoln Airfield');
+    
+# Populate meeting types
+CALL AddMeetingType ('General Meeting');
+CALL AddMeetingType ('Guest Speaker');
+CALL AddMeetingType ('Demo');
+CALL AddMeetingType ('Work Day');
+CALL AddMeetingType ('Recruitment Meeting');
+CALL AddMeetingType ('Elections');
+
 # Populate Meetings
 CALL AddMeeting ('2018-09-16 19:00', 'Inaugural Meeting', 'Avery 19', 'General Meeting');
 CALL AddMeeting ('2018-09-23 19:00', 'Recruitment Meeting', 'Avery 19', 'Recruitment Meeting');

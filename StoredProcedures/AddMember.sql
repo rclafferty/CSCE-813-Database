@@ -24,6 +24,7 @@ BEGIN
 
     DECLARE memberGitHub varchar(20);
     DECLARE memberDiscord varchar(20);
+    DECLARE memberGoogleDrive varchar(40);
     
     DECLARE memberIDNumber int;
     
@@ -103,8 +104,14 @@ BEGIN
     ELSE
         SET memberDiscord = discord;
     END IF;
+    
+    IF googleDrive IS NULL THEN
+		SET memberGoogleDrive = 'N/A';
+	ELSE
+		set memberGoogleDrive = googleDrive;
+	END IF;
 
-    INSERT INTO Members (firstName, lastName, majorID, doubleMajorID, yearID, github, discord, googleDrive) VALUES (firstName, lastName, memberMajorID, memberDMajorID, memberYearID, memberGitHub, memberDiscord, googleDrive);
+    INSERT INTO Members (firstName, lastName, majorID, doubleMajorID, yearID, github, discord, googleDrive) VALUES (firstName, lastName, memberMajorID, memberDMajorID, memberYearID, memberGitHub, memberDiscord, memberGoogleDrive);
 	
     SELECT id
     INTO memberIDNumber

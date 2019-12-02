@@ -1,7 +1,7 @@
--- CREATE DATABASE IF NOT EXISTS Class;
--- use Class;
+CREATE DATABASE IF NOT EXISTS Class;
+use Class;
 
-USE GeneralTest;
+-- USE GeneralTest;
 
 DROP TABLE IF EXISTS
     EventAttendance,
@@ -54,19 +54,16 @@ CREATE TABLE IF NOT EXISTS Members (
         FOREIGN KEY(yearID) references SchoolYears(id),
 
     # Club Resources Info
-    github varchar(20) NOT NULL,
-    discord varchar(20) NOT NULL,
-    googleDrive varchar(40) NOT NULL,
+    github varchar(20) NOT NULL DEFAULT 'N/A',
+    discord varchar(20) NOT NULL DEFAULT 'N/A',
+    googleDrive varchar(40) NOT NULL DEFAULT 'N/A',
 
     # Indexes
     INDEX(firstName, lastName),
     INDEX(github, discord, googleDrive),
 
     # Uniques
-    UNIQUE(firstName, lastName),
-    UNIQUE(github),
-    UNIQUE(discord),
-    UNIQUE(googleDrive)
+    UNIQUE(firstName, lastName)
 );
 
 CREATE TABLE IF NOT EXISTS Emails (
@@ -95,14 +92,14 @@ CREATE TABLE IF NOT EXISTS Locations (
     building varchar(30),
     room int,
     city varchar(20) NOT NULL DEFAULT 'Lincoln',
-    state varchar(2) NOT NULL DEFAULT 'NE'
+    state varchar(2) NOT NULL DEFAULT 'NE',
 
     # Indexes
-    INDEX(name, building, room, city, state, zip),
+    INDEX(name, building, room, city, state),
 
     # Uniques
     UNIQUE(name),
-    UNIQUE(building, room, city, state, zip)
+    UNIQUE(building, room, city, state)
 );
 
 CREATE TABLE IF NOT EXISTS Meetings (
