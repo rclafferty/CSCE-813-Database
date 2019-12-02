@@ -34,7 +34,7 @@ BEGIN
     WHERE mt.meetingType LIKE meetingType;
 
     IF meetingLocationID IS NOT NULL THEN
-        IF meetingTypeID IS NOT NULL THEN
+        IF meetingTypeID IS NULL THEN
             CALL AddMeetingType(meetingType);
         END IF;
 
@@ -43,7 +43,7 @@ BEGIN
         FROM MeetingTypes mt
         WHERE mt.meetingType LIKE meetingType;
 
-		INSERT INTO Meetings (meetingDate, topic, locationID) VALUE (meeting, meetingTopic, meetingLocationID);
+		INSERT INTO Meetings (meetingDate, topic, locationID, typeID) VALUE (meeting, meetingTopic, meetingLocationID, meetingTypeID);
 	END IF;
 END$$
 

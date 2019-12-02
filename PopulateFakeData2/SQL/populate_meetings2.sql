@@ -1,6 +1,6 @@
 # Populate locations
-CALL AddLocation ('Avery 19', 'Avery Hall', 19, NULL, NULL);
-CALL AddLocation ('Avery Basement', 'Avery Hall', NULL, NULL, NULL);
+CALL AddLocation ('Avery 19', 'Avery Hall', 19, 'Lincoln', 'NE');
+CALL AddLocation ('Avery Basement', 'Avery Hall', NULL, 'Lincoln', 'NE');
 CALL AddLocationNameOnly ('Lincoln Airfield');
     
 # Populate meeting types

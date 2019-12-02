@@ -1,4 +1,5 @@
 DROP PROCEDURE IF EXISTS AddLocation;
+DROP PROCEDURE IF EXISTS AddLocationNameOnly;
 
 DELIMITER $$
 
@@ -17,7 +18,7 @@ CREATE PROCEDURE AddLocationNameOnly (
     locationName varchar(20)
 )
 BEGIN
-    INSERT INTO Locations(name, building, room, city, state) VALUE (locationName, NULL, NULL, NULL, NULL);
+    INSERT INTO Locations(name) VALUE (locationName);
 END$$
 
 DELIMITER ;
