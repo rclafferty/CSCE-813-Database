@@ -3,9 +3,14 @@ SELECT m.firstName, m.lastName, maj.title, s.title, m.githubUsername, m.discordU
     JOIN gdc.SchoolYear s ON s.id = m.yearID
 ;
 
-SELECT m.firstName, m.lastName, maj.major, s.schoolYear, m.github, m.discord FROM Members m
+USE Class;
+DROP TABLE FullDetails;
+CREATE TABLE FullDetails SELECT m.firstName, m.lastName, maj.major, s.schoolYear, m.github, m.discord FROM Members m
 	JOIN Majors maj ON maj.id = m.majorID
     JOIN SchoolYears s ON s.id = m.yearID
 ;
+
+
+SELECT * FROM FullDetails WHERE major LIKE 'N/A' OR schoolYear LIKE 'N/A';
 
 SELECT * FROM SchoolYears;

@@ -31,7 +31,7 @@ BEGIN
     DECLARE CONTINUE HANDLER FOR NOT FOUND BEGIN END;
 
     IF major IS NULL THEN
-        SET memberMajor = 'Undeclared';
+        SET memberMajor = 'N/A';
     ELSE
         SET memberMajor = major;
     END IF;
