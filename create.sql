@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS EventTypes (
 
 CREATE TABLE IF NOT EXISTS Events (
     id int PRIMARY KEY AUTO_INCREMENT,
-    name varchar(30) NOT NULL,
+    name varchar(50) NOT NULL,
     locationID int,
         FOREIGN KEY(locationID) references Locations(id),
     eventTypeID int,

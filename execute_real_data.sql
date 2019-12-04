@@ -11,3 +11,5 @@ USE Class;
 \source RealData/SQL/populate_members.sql
 
 \source RealData/SQL/populate_meetings_and_attendance.sql
+
+\source RealData/SQL/populate_events.sql
