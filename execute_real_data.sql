@@ -13,3 +13,5 @@ USE Class;
 \source RealData/SQL/populate_meetings_and_attendance.sql
 
 \source RealData/SQL/populate_events.sql
+
+\source RealData/SQL/update_fake_data.sql
