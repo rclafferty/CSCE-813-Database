@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS MeetingTypes (
 
 CREATE TABLE IF NOT EXISTS Locations (
     id int PRIMARY KEY AUTO_INCREMENT,
-    name varchar(20) NOT NULL,
+    name varchar(30) NOT NULL,
     building varchar(30),
     room int,
     city varchar(20) NOT NULL DEFAULT 'Lincoln',

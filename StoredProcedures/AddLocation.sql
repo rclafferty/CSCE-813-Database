@@ -4,7 +4,7 @@ DROP PROCEDURE IF EXISTS AddLocationNameOnly;
 DELIMITER $$
 
 CREATE PROCEDURE AddLocation (
-    locationName varchar(20),
+    locationName varchar(30),
     building varchar(30),
     room int,
     city varchar(20),
