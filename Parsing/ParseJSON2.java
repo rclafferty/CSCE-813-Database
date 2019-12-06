@@ -12,7 +12,8 @@ public class ParseJSON2
     {
         // ArrayList<ArrayList<ArrayList<String>>> hierarchy = new ArrayList<ArrayList<ArrayList<String>>>();
 
-        formatJSON("updated_real_data.json", "real_data_formated.json");
+        String filename = "../FakeData/JSON/fake_data.json";
+        formatJSON(filename, "real_data_formated.json");
         // classFirst("real_data.json");
     }
 

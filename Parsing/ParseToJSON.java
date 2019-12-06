@@ -12,10 +12,13 @@ public class ParseToJSON
     {
         // ArrayList<ArrayList<ArrayList<String>>> hierarchy = new ArrayList<ArrayList<ArrayList<String>>>();
 
+        String filename = "../FakeData/JSON/fake_data.json";
+        // String filename = "../RealData/JSON/updated_real_data.json";
         // printContents("updated_real_data.json");
-
+        
         // formatJSON("real_data.json");
-        formatJSON("real_data.json");
+        // printContents(filename);
+        formatJSON(filename);
     }
 
     private static void printContents(String filename) throws IOException
@@ -24,11 +27,14 @@ public class ParseToJSON
         while (thisFile.hasNext())
         {
             String line = thisFile.nextLine();
-            if (line.contains("firstName"))
-            {
-                System.out.println(line);
-            }
+            // if (line.contains("firstName"))
+            // {
+            //     System.out.println(line);
+            // }
+
+            System.out.println(line);
         }
+
     }
 
     private static void formatJSON(String filename) throws IOException
@@ -73,6 +79,20 @@ public class ParseToJSON
 
                 // Split on the colon
                 parts = line.split(":");
+                // System.out.print(parts.length + " part");
+                // if (parts.length != 1)
+                // {
+                //     System.out.print("s");
+                // }
+                // System.out.println("");
+
+                for (int i = 0; i < parts.length; i++)
+                {
+                    parts[i] = parts[i].trim();
+                    String s = parts[i];
+                    // System.out.println(s);
+                }
+
                 if (parts.length == 1)
                 {
                     if (parts[0].charAt(0) != '[' && parts[0].charAt(0) != ']' && parts[0].charAt(0) != '{' && parts[0].charAt(0) != '}')
@@ -132,11 +152,26 @@ public class ParseToJSON
                 // System.out.println(sb.toString());
 
                 members.add(new Member(memberName, memberMajor, memberYear));
+                // System.out.println(members.size());
             }
         }
         inFile.close();
 
+        printTree(Member.hierarchy.root, 0);
+
         printJSON();
+    }
+
+    public static void printTree(MyNode<String> node, int i)
+    {
+        for (int x = 0; x < i; x++)
+            System.out.print("\\");
+        System.out.println(node.data);
+
+        for (MyNode<String> child : node.children)
+        {
+            printTree(child, i+1);
+        }
     }
 
     public static void printJSON()
@@ -253,6 +288,7 @@ class Member
         {
             MyNode<String> newNode = new MyNode<String>();
             newNode.data = major;
+            System.out.println("Adding " + major);
             newNode.quantity = 1;
             newNode.children = new ArrayList<MyNode<String>>();
             hierarchy.root.children.add(newNode);
@@ -278,6 +314,7 @@ class Member
         {
             MyNode<String> newNode = new MyNode<String>();
             newNode.data = year;
+            System.out.println("Adding " + year);
             newNode.quantity = 1;
             newNode.children = new ArrayList<MyNode<String>>();
             majorNode.children.add(newNode);
@@ -287,6 +324,7 @@ class Member
 
         MyNode<String> nameNode = new MyNode<String>();
         nameNode.data = name;
+        System.out.println("Adding " + name);
         yearNode.children.add(nameNode);
     }
 }
