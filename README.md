@@ -15,3 +15,5 @@ The database tracks member information, email list, meeting attendance, and even
 The Visualization folder contains the HTML, CSS, JavaScript, and JSON files used in visualizing the data present in the database. Templates for the sites were gathered from ObservableHQ.com and bl.ocks.org and adapted to best show our data.
 
 ## Future Work
+
+There are a few generic details that the club currently does not have records on, such as fundraisers. Once the club has records on these types of details, the database could be expanded to support it quite easily.
