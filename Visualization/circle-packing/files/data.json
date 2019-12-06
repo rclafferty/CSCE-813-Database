@@ -1,0 +1,451 @@
+{
+  "name": "GDC Data",
+  "children": [
+    {
+      "name": "Software Engineering",
+      "children": [
+        {
+          "name": "Freshman",
+          "children": [
+            {
+              "name": "Hunter Oestmann",
+              "value": "1"
+            },
+            {
+              "name": "Aaron Friesen",
+              "value": "1"
+            },
+            {
+              "name": "Ethan Fox",
+              "value": "1"
+            },
+            {
+              "name": "Alex Kupec",
+              "value": "1"
+            },
+            {
+              "name": "Cody Binder",
+              "value": "1"
+            },
+            {
+              "name": "Jackson Herman",
+              "value": "1"
+            },
+            {
+              "name": "Devin McGuire",
+              "value": "1"
+            },
+            {
+              "name": "Daniel Noon",
+              "value": "1"
+            },
+            {
+              "name": "Tyler Senne",
+              "value": "1"
+            },
+            {
+              "name": "Liam Seper",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Junior",
+          "children": [
+            {
+              "name": "Alex Skoda",
+              "value": "1"
+            },
+            {
+              "name": "Phillip Schwab",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Sophomore",
+          "children": [
+            {
+              "name": "Jaden Goter",
+              "value": "1"
+            },
+            {
+              "name": "Jason Rademacher",
+              "value": "1"
+            },
+            {
+              "name": "Camden Obertop",
+              "value": "1"
+            },
+            {
+              "name": "Tanner Skelton",
+              "value": "1"
+            },
+            {
+              "name": "Grant Davis",
+              "value": "1"
+            },
+            {
+              "name": "Michael Kovar",
+              "value": "1"
+            },
+            {
+              "name": "Zach Randolph",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Undeclared",
+      "children": [
+        {
+          "name": "Freshman",
+          "children": [
+            {
+              "name": "Phillip Evans",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Science",
+      "children": [
+        {
+          "name": "Freshman",
+          "children": [
+            {
+              "name": "Ethan Jones",
+              "value": "1"
+            },
+            {
+              "name": "Charlie Peng",
+              "value": "1"
+            },
+            {
+              "name": "Beau Yoesel",
+              "value": "1"
+            },
+            {
+              "name": "Rhoderick Beery",
+              "value": "1"
+            },
+            {
+              "name": "Calen Olsen",
+              "value": "1"
+            },
+            {
+              "name": "Shiv Mukherjee",
+              "value": "1"
+            },
+            {
+              "name": "Josh Bellmyer",
+              "value": "1"
+            },
+            {
+              "name": "Dalton Gregory",
+              "value": "1"
+            },
+            {
+              "name": "Chase Hermick",
+              "value": "1"
+            },
+            {
+              "name": "Keyaun Washington",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Junior",
+          "children": [
+            {
+              "name": "Kolby Johnson",
+              "value": "1"
+            },
+            {
+              "name": "Quinn Lennemann",
+              "value": "1"
+            },
+            {
+              "name": "Rongsong Yang",
+              "value": "1"
+            },
+            {
+              "name": "Mike Senior",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Masters",
+          "children": [
+            {
+              "name": "Casey Lafferty",
+              "value": "1"
+            },
+            {
+              "name": "Molly Lee",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "N/A",
+          "children": [
+            {
+              "name": "Christopher Reid",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Senior",
+          "children": [
+            {
+              "name": "Nick Lehnert",
+              "value": "1"
+            },
+            {
+              "name": "Nathan Ullman",
+              "value": "1"
+            },
+            {
+              "name": "Tristan Sladek",
+              "value": "1"
+            },
+            {
+              "name": "Geigh Zollicoffer",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Sophomore",
+          "children": [
+            {
+              "name": "Kelly Kamrath",
+              "value": "1"
+            },
+            {
+              "name": "Sailesh Pujara",
+              "value": "1"
+            },
+            {
+              "name": "John Ang",
+              "value": "1"
+            },
+            {
+              "name": "Dominic Pelini",
+              "value": "1"
+            },
+            {
+              "name": "Sungjin Lee",
+              "value": "1"
+            },
+            {
+              "name": "Patrick McManigal",
+              "value": "1"
+            },
+            {
+              "name": "Fateh Sandhu",
+              "value": "1"
+            },
+            {
+              "name": "Alec Skinner",
+              "value": "1"
+            },
+            {
+              "name": "Daryn Capps",
+              "value": "1"
+            },
+            {
+              "name": "Sifat Syed",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Electrical Engineering",
+      "children": [
+        {
+          "name": "Freshman",
+          "children": [
+            {
+              "name": "Sergio Lara-Arroyo",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Computer Engineering",
+      "children": [
+        {
+          "name": "Freshman",
+          "children": [
+            {
+              "name": "Sam Atkins",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Junior",
+          "children": [
+            {
+              "name": "Daniel Shchur",
+              "value": "1"
+            },
+            {
+              "name": "Trent McElmury",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Senior",
+          "children": [
+            {
+              "name": "Nate Doher",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chemical Engineering",
+      "children": [
+        {
+          "name": "Freshman",
+          "children": [
+            {
+              "name": "Kenneth Reese",
+              "value": "1"
+            }
+          ]
+        },
+        {
+          "name": "Junior",
+          "children": [
+            {
+              "name": "Tommy Le",
+              "value": "1"
+            },
+            {
+              "name": "Carrick Wilson",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Accounting",
+      "children": [
+        {
+          "name": "Freshman",
+          "children": [
+            {
+              "name": "Sam Foit",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Architecture",
+      "children": [
+        {
+          "name": "Junior",
+          "children": [
+            {
+              "name": "Ciara Allen",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "N/A",
+      "children": [
+        {
+          "name": "N/A",
+          "children": [
+            {
+              "name": "Paul Nguyen",
+              "value": "1"
+            },
+            {
+              "name": "Li Linhan",
+              "value": "1"
+            },
+            {
+              "name": "Ian Stamper",
+              "value": "1"
+            },
+            {
+              "name": "Collin Bednar",
+              "value": "1"
+            },
+            {
+              "name": "Brady Cundall",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Biological Systems Engineering",
+      "children": [
+        {
+          "name": "Sophomore",
+          "children": [
+            {
+              "name": "Ian Meister",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Graphic Design",
+      "children": [
+        {
+          "name": "Sophomore",
+          "children": [
+            {
+              "name": "Misty Cao",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Marketing",
+      "children": [
+        {
+          "name": "Sophomore",
+          "children": [
+            {
+              "name": "Brent Lucke",
+              "value": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

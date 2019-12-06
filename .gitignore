@@ -9,3 +9,6 @@
 
 # Ignore real data
 /RealData/
+
+# Ignore the sass cache
+*/.sass-cache
